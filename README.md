@@ -33,7 +33,7 @@ python src/train.py          # trains, then evaluates on test boards -> results/
 - [x] Train a YOLO-based detector
 - [x] Evaluate (mAP, per-class results)
 - [ ] Error analysis (why is `short` weak?)
-- [ ] Build a Gradio web demo
+- [x] Build a Gradio web demo (`python app.py`)
 - [ ] Deploy to Hugging Face Spaces
 
 ## Tech Stack
