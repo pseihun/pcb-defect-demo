@@ -1,0 +1,16 @@
+{
+  "weights": "runs/detect/runs/pcb_yolo11s/weights/best.pt",
+  "imgsz": 1280,
+  "test_mAP50": 0.9299,
+  "test_mAP50_95": 0.4805,
+  "precision": 0.8924,
+  "recall": 0.9634,
+  "per_class_mAP50": {
+    "missing_hole": 0.9949,
+    "mouse_bite": 0.9847,
+    "open_circuit": 0.9941,
+    "short": 0.6456,
+    "spur": 0.9831,
+    "spurious_copper": 0.9767
+  }
+}
