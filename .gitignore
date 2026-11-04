@@ -21,3 +21,4 @@ runs/
 Thumbs.db
 .vscode/
 .idea/
+*.log
