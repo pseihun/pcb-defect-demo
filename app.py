@@ -18,8 +18,9 @@ model = YOLO(MODEL_PATH)
 def detect(image, conf: float):
     if image is None:
         return None, []
-    result = model.predict(image, imgsz=IMGSZ, conf=conf, verbose=False)[0]
-    annotated = result.plot()[:, :, ::-1]  # BGR -> RGB
+    # Gradio gives RGB, but Ultralytics treats numpy arrays as BGR (OpenCV order).
+    result = model.predict(image[:, :, ::-1], imgsz=IMGSZ, conf=conf, verbose=False)[0]
+    annotated = result.plot()[:, :, ::-1]  # BGR -> RGB for display
 
     rows = []
     for box in result.boxes:
