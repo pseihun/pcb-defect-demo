@@ -1,0 +1,341 @@
+{
+  "class": "short",
+  "weights": "weights/best.pt",
+  "imgsz": 1280,
+  "label_stats": {
+    "train": {
+      "missing_hole": {
+        "count": 317,
+        "median_w": 64.0,
+        "median_h": 64.0
+      },
+      "mouse_bite": {
+        "count": 316,
+        "median_w": 58.0,
+        "median_h": 59.0
+      },
+      "open_circuit": {
+        "count": 300,
+        "median_w": 49.0,
+        "median_h": 47.0
+      },
+      "short": {
+        "count": 315,
+        "median_w": 80.0,
+        "median_h": 74.0
+      },
+      "spur": {
+        "count": 312,
+        "median_w": 63.5,
+        "median_h": 60.0
+      },
+      "spurious_copper": {
+        "count": 320,
+        "median_w": 67.5,
+        "median_h": 70.0
+      }
+    },
+    "val": {
+      "missing_hole": {
+        "count": 103,
+        "median_w": 69.0,
+        "median_h": 69.0
+      },
+      "mouse_bite": {
+        "count": 100,
+        "median_w": 67.0,
+        "median_h": 67.0
+      },
+      "open_circuit": {
+        "count": 102,
+        "median_w": 52.5,
+        "median_h": 51.0
+      },
+      "short": {
+        "count": 101,
+        "median_w": 92.0,
+        "median_h": 70.0
+      },
+      "spur": {
+        "count": 100,
+        "median_w": 80.0,
+        "median_h": 77.0
+      },
+      "spurious_copper": {
+        "count": 102,
+        "median_w": 69.0,
+        "median_h": 84.5
+      }
+    },
+    "test": {
+      "missing_hole": {
+        "count": 77,
+        "median_w": 62.0,
+        "median_h": 64.0
+      },
+      "mouse_bite": {
+        "count": 76,
+        "median_w": 73.0,
+        "median_h": 69.0
+      },
+      "open_circuit": {
+        "count": 80,
+        "median_w": 53.0,
+        "median_h": 53.5
+      },
+      "short": {
+        "count": 75,
+        "median_w": 88.0,
+        "median_h": 78.0
+      },
+      "spur": {
+        "count": 76,
+        "median_w": 90.5,
+        "median_h": 62.5
+      },
+      "spurious_copper": {
+        "count": 81,
+        "median_w": 63.0,
+        "median_h": 71.0
+      }
+    }
+  },
+  "per_class_val": {
+    "missing_hole": {
+      "P": 0.971,
+      "R": 0.97,
+      "AP50": 0.967,
+      "AP50_95": 0.512
+    },
+    "mouse_bite": {
+      "P": 0.971,
+      "R": 0.999,
+      "AP50": 0.993,
+      "AP50_95": 0.557
+    },
+    "open_circuit": {
+      "P": 0.963,
+      "R": 0.98,
+      "AP50": 0.989,
+      "AP50_95": 0.537
+    },
+    "short": {
+      "P": 0.956,
+      "R": 0.97,
+      "AP50": 0.969,
+      "AP50_95": 0.48
+    },
+    "spur": {
+      "P": 0.956,
+      "R": 0.96,
+      "AP50": 0.987,
+      "AP50_95": 0.479
+    },
+    "spurious_copper": {
+      "P": 0.971,
+      "R": 0.968,
+      "AP50": 0.985,
+      "AP50_95": 0.555
+    }
+  },
+  "per_class_test": {
+    "missing_hole": {
+      "P": 1.0,
+      "R": 0.956,
+      "AP50": 0.995,
+      "AP50_95": 0.573
+    },
+    "mouse_bite": {
+      "P": 0.961,
+      "R": 0.98,
+      "AP50": 0.985,
+      "AP50_95": 0.503
+    },
+    "open_circuit": {
+      "P": 0.968,
+      "R": 0.988,
+      "AP50": 0.994,
+      "AP50_95": 0.54
+    },
+    "short": {
+      "P": 0.516,
+      "R": 0.907,
+      "AP50": 0.646,
+      "AP50_95": 0.255
+    },
+    "spur": {
+      "P": 0.939,
+      "R": 0.987,
+      "AP50": 0.983,
+      "AP50_95": 0.515
+    },
+    "spurious_copper": {
+      "P": 0.97,
+      "R": 0.963,
+      "AP50": 0.977,
+      "AP50_95": 0.498
+    }
+  },
+  "fp_breakdown_test": {
+    "missing_hole": {
+      "conf>=0.25": {
+        "TP": 73,
+        "FP": 0,
+        "FP_by_type": {},
+        "FP_by_board": {}
+      },
+      "conf>=0.5": {
+        "TP": 72,
+        "FP": 0,
+        "FP_by_type": {},
+        "FP_by_board": {}
+      }
+    },
+    "mouse_bite": {
+      "conf>=0.25": {
+        "TP": 74,
+        "FP": 3,
+        "FP_by_type": {
+          "localization": 1,
+          "duplicate": 1,
+          "background": 1
+        },
+        "FP_by_board": {
+          "10": 2,
+          "12": 1
+        }
+      },
+      "conf>=0.5": {
+        "TP": 72,
+        "FP": 1,
+        "FP_by_type": {
+          "background": 1
+        },
+        "FP_by_board": {
+          "12": 1
+        }
+      }
+    },
+    "open_circuit": {
+      "conf>=0.25": {
+        "TP": 79,
+        "FP": 2,
+        "FP_by_type": {
+          "class_confusion": 2
+        },
+        "FP_by_board": {
+          "10": 1,
+          "12": 1
+        }
+      },
+      "conf>=0.5": {
+        "TP": 77,
+        "FP": 1,
+        "FP_by_type": {
+          "class_confusion": 1
+        },
+        "FP_by_board": {
+          "10": 1
+        }
+      }
+    },
+    "short": {
+      "conf>=0.25": {
+        "TP": 69,
+        "FP": 64,
+        "FP_by_type": {
+          "localization": 2,
+          "duplicate": 2,
+          "background": 60
+        },
+        "FP_by_board": {
+          "10": 4,
+          "12": 60
+        }
+      },
+      "conf>=0.5": {
+        "TP": 65,
+        "FP": 60,
+        "FP_by_type": {
+          "background": 60
+        },
+        "FP_by_board": {
+          "12": 60
+        }
+      }
+    },
+    "spur": {
+      "conf>=0.25": {
+        "TP": 75,
+        "FP": 4,
+        "FP_by_type": {
+          "background": 1,
+          "localization": 3
+        },
+        "FP_by_board": {
+          "10": 4
+        }
+      },
+      "conf>=0.5": {
+        "TP": 75,
+        "FP": 4,
+        "FP_by_type": {
+          "background": 1,
+          "localization": 3
+        },
+        "FP_by_board": {
+          "10": 4
+        }
+      }
+    },
+    "spurious_copper": {
+      "conf>=0.25": {
+        "TP": 78,
+        "FP": 2,
+        "FP_by_type": {
+          "background": 2
+        },
+        "FP_by_board": {
+          "12": 2
+        }
+      },
+      "conf>=0.5": {
+        "TP": 63,
+        "FP": 2,
+        "FP_by_type": {
+          "background": 2
+        },
+        "FP_by_board": {
+          "12": 2
+        }
+      }
+    }
+  },
+  "recurring_fp": {
+    "board": "12",
+    "region_xyxy_px": [
+      1152,
+      1115,
+      1232,
+      1195
+    ],
+    "bg_fp_on_board_conf>=0.25": 60,
+    "bg_fp_in_region_conf>=0.25": 60,
+    "center_spread_px_std": [
+      0.0,
+      0.0
+    ],
+    "gt_in_region": 1,
+    "preds_removed": 123,
+    "AP50_all (own calc)": 0.65,
+    "AP50_ignore_region (own calc)": 0.946
+  },
+  "tp_iou_median": {
+    "missing_hole": 0.816,
+    "mouse_bite": 0.768,
+    "open_circuit": 0.773,
+    "short": 0.711,
+    "spur": 0.78,
+    "spurious_copper": 0.777
+  }
+}

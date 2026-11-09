@@ -16,6 +16,9 @@ runs/
 # Secrets
 .env
 
+# Local learning notes (VibeWise plugin)
+.vibe-wise/
+
 # OS / editor
 .DS_Store
 Thumbs.db
