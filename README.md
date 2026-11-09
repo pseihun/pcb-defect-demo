@@ -1,8 +1,9 @@
 # PCB Defect Detection Demo
 
-> 🚧 Work in progress
-
 Upload a PCB image and get detected defects (missing hole, short, open circuit, spur, etc.) with bounding boxes.
+
+![Gradio demo](docs/demo.jpg)
+*The Gradio demo (`app.py`) on a test-board image: 5 missing holes found. See [Run the demo locally](#run-the-demo-locally).*
 
 ## Results (YOLO11s, imgsz 1280, test on unseen boards 10 & 12)
 
@@ -58,13 +59,21 @@ pip install -r requirements.txt
 python src/train.py          # trains, then evaluates on test boards -> results/pcb_yolo11s.json
 ```
 
+## Run the demo locally
+The trained weights are not in the repo (`*.pt` is gitignored), so train first (see [Reproduce](#reproduce)), then:
+```bash
+copy runs\detect\runs\pcb_yolo11s\weights\best.pt weights\best.pt   # macOS/Linux: cp
+python app.py                # open http://127.0.0.1:7860
+```
+Or point the app at any checkpoint with `MODEL_PATH=path/to/best.pt`. On an RTX 4090 one image takes about 12 ms.
+
 ## Goals
 - [x] Prepare a public PCB defect dataset (board-level split, no leakage)
 - [x] Train a YOLO-based detector
 - [x] Evaluate (mAP, per-class results)
 - [x] Error analysis (why is `short` weak?)
 - [x] Build a Gradio web demo (`python app.py`)
-- [ ] Deploy to Hugging Face Spaces
+- [ ] Hosted online demo (skipped for now: Gradio apps on Hugging Face Spaces now need a paid plan)
 
 ## Tech Stack
 Python · PyTorch · Ultralytics YOLO · Gradio
@@ -74,6 +83,7 @@ Python · PyTorch · Ultralytics YOLO · Gradio
 pcb-defect-demo/
 ├── analysis/    # error analysis outputs (report.json, infographic, FP/TP crops)
 ├── data/        # dataset (not tracked by git, see data/README.md)
+├── docs/        # README images
 ├── examples/    # sample images for the demo
 ├── results/     # test metrics (JSON)
 ├── src/         # data prep / training / evaluation / error analysis code
